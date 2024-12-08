@@ -15,5 +15,10 @@ model Media {
   metadataText String @default("")
   originUrl   String @default("")
   createdAt   DateTime @default(now())
+
+  @@index([url])
+  @@index([type])
+  @@index([originUrl])
+  @@index([metadataText])
 }
 
