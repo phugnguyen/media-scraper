@@ -8,9 +8,12 @@ datasource db {
 }
 
 model Media {
-  id        Int      @id @default(autoincrement())
-  url       String
-  type      String
-  metadata  Json
-  createdAt DateTime @default(now())
+  id          Int      @id @default(autoincrement())
+  url         String
+  type        String
+  metadata    Json
+  metadataText String @default("")
+  originUrl   String @default("")
+  createdAt   DateTime @default(now())
 }
+
