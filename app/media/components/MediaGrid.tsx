@@ -50,10 +50,22 @@ export function MediaGrid({ items }: MediaGridProps) {
           )}
           <div className="p-4 text-sm">
             <p className="text-gray-700">
+              <strong>ID:</strong> {item.id}
+            </p>
+            <p className="text-gray-700">
               <strong>Type:</strong> {item.type}
             </p>
-            <p className="text-gray-700 mt-1 truncate">
-              <strong>Origin:</strong> {item.originUrl}
+            <p className="text-gray-700">
+              <strong>URL:</strong> {item.url}
+            </p>
+            <p className="text-gray-700">
+              <strong>Metadata Text:</strong> {item.metadataText}
+            </p>
+            <p className="text-gray-700">
+              <strong>Origin URL:</strong> {item.originUrl}
+            </p>
+            <p className="text-gray-700">
+              <strong>Created At:</strong> {item.createdAt}
             </p>
           </div>
         </div>
