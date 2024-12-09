@@ -18,6 +18,10 @@ This project implements a media scraping application that allows users to scrape
 - [x] Uses **Next.js**.
 - [x] Dockerize the application using Docker Compose.
 - [x] Support both server-side rendering (SSR) and client-side rendering (CSR).
+
+  - Client Side Component: Media Index Page
+  - Server Side Component: Media Individual Page
+
 - [x] Include a demo video of the working submission.
 - [x] Design a scalable scraper capable of handling ~5000 URLs simultaneously on a server with 1 CPU and 1GB RAM.
 
