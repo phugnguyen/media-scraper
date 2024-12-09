@@ -2,17 +2,24 @@
 
 This project implements a media scraping application that allows users to scrape image and video URLs from web pages and view them on a paginated frontend. The project is built using **Next.js**, **Node.js**, **React.js**, and **Prisma**, and utilizes Docker for containerization.
 
-## If I had more time I would
+## Future Improvements
 
-- TDD
-- Only works for images right now... I think some of the videos elements didn't load in with the fetch request. Probably come up with a different strategy to make sure to full load the page and all assets... maybe with a web crawler.
-- Implement the middlewares for auth both on frontend routes and backend routes.
-  - Maybe use NextAuth.
-- Implement MULTIPLE url scraping:
-  - If we took in an array, I'd iterate through the array and send them to the current /api/scrape.
-- Figure out a new strategy for the index page to load faster, maybe separate out the search onto its own client component and turn the index page into a server side component.
-- Implement url based search so that navigation is easier and more intuitive.
-- Create a UI for /api/scrape.
+If I had more time, I would focus on the following enhancements:
+
+- **Test-Driven Development (TDD):** Implement TDD practices to ensure code quality and reduce potential bugs during development.
+- **Support for Video Elements:** Currently, the scraper works primarily for images. Some video elements may not load correctly due to limitations in the fetch request. I would explore strategies to fully load the page and all assets, potentially using a web crawler for better asset discovery.
+
+- **Authentication Middleware:** Implement robust authentication middleware for both frontend and backend routes. Using a library like NextAuth could simplify this process and provide a scalable solution.
+
+- **Multiple URL Scraping:** Enable the API to accept an array of URLs. Each URL would be processed iteratively, leveraging the existing `/api/scrape` endpoint for efficient handling.
+
+- **Optimizing the Index Page:** Rework the index page for faster loading times by separating the search functionality into its own client-side component and converting the index page into a server-side rendered component. This would help streamline rendering and improve performance.
+
+- **Faster Server-Side Single Item Loading:** Optimize the server-side rendering of individual items to reduce initial load times. Once the initial HTML is built, subsequent requests should be faster. Consider exporting the full HTML of these pages to further speed up load times.
+
+- **URL-Based Search:** Introduce URL-based search functionality to make navigation between the index and individual item pages more seamless and intuitive.
+
+- **UI for `/api/scrape`:** Design and implement a user-friendly interface for interacting with the `/api/scrape` endpoint, allowing users to test and use the scraper without needing direct API access.
 
 ## Requirements
 
@@ -109,3 +116,5 @@ To handle ~5000 URLs concurrently on a server with 1 CPU and 1GB RAM:
 ## Demo Video
 
 Include a link to the demo video showcasing the application functionality.
+
+loom.com/share/35effa136e2448788d03c35a71bcb712
