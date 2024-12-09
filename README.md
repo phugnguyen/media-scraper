@@ -5,6 +5,7 @@ This project implements a media scraping application that allows users to scrape
 ## If I had more time I would
 
 - Implement the middlewares for auth both on frontend routes and backend routes
+- Figure out a new strategy for the index page to load faster, maybe separate out the search onto its own client component and turn the index page into a server side component
 
 ## Requirements
 
@@ -97,44 +98,6 @@ To handle ~5000 URLs concurrently on a server with 1 CPU and 1GB RAM:
 
 4. **Horizontal Scaling**:
    - Use container orchestration tools (e.g., Kubernetes, Docker Swarm) to scale out the scraper service.
-
-## Development Workflow
-
-- Start the development server:
-
-  ```bash
-  npm next dev
-  ```
-
-- Run ESLint checks:
-
-  ```bash
-  npm run lint
-  ```
-
-- Apply database migrations:
-  ```bash
-  npx prisma migrate dev
-  ```
-
-## Docker Workflow
-
-- Build and run the application:
-
-  ```bash
-  docker compose up --build
-  ```
-
-- Run database migrations:
-
-  ```bash
-  docker compose run web npx prisma migrate deploy
-  ```
-
-- Stop and clean up containers:
-  ```bash
-  docker compose down
-  ```
 
 ## Demo Video
 
