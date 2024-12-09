@@ -5,6 +5,7 @@ This project implements a media scraping application that allows users to scrape
 ## If I had more time I would
 
 - TDD
+- Only works for images right now... I think some of the videos elements didn't load in with the fetch request. Probably come up with a different strategy to make sure to full load the page and all assets... maybe with a web crawler.
 - Implement the middlewares for auth both on frontend routes and backend routes.
   - Maybe use NextAuth.
 - Implement MULTIPLE url scraping:
