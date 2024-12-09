@@ -2,9 +2,7 @@ import { MediaItem } from "@/app/types";
 import React from "react";
 
 async function fetchMediaById(id: string): Promise<MediaItem | null> {
-  const res = await fetch(`http://localhost:3000/api/media/${id}`, {
-    cache: "no-store", // Disable caching for dynamic data
-  });
+  const res = await fetch(`http://localhost:3000/api/media/${id}`);
 
   if (!res.ok) {
     return null; // Return null if the fetch fails
