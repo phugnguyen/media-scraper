@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface MediaItem {
   id: number;
@@ -32,7 +33,7 @@ export function MediaGrid({ items }: MediaGridProps) {
           className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
         >
           {item.type === "image" ? (
-            <img
+            <Image
               src={item.url}
               alt={item.url}
               className="w-full h-auto object-cover"
