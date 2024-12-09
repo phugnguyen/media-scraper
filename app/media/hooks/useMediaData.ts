@@ -1,14 +1,5 @@
+import { MediaItem } from "@/app/types";
 import { useState, useEffect } from "react";
-
-interface MediaItem {
-  id: number;
-  url: string;
-  type: string;
-  metadata: any;
-  metadataText: string;
-  originUrl: string;
-  createdAt: string;
-}
 
 interface UseMediaDataParams {
   page: number;

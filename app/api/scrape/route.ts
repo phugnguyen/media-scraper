@@ -100,7 +100,7 @@ export async function POST(req: NextRequest) {
       items: mediaItems,
     });
   } catch (error: any) {
-    // console.error(error);
+    console.log(error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

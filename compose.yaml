@@ -1,0 +1,30 @@
+services:
+  db:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mediascraper
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: "npm run dev" # Use Next.js development server
+    environment:
+      DATABASE_URL: "postgresql://admin:password@db:5432/mediascraper?schema=public"
+      NODE_ENV: development
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app # Bind mount local files for hot reloading
+      - /app/node_modules # Prevent overwriting node_modules
+    depends_on:
+      - db
+
+volumes:
+  db_data:
