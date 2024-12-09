@@ -4,8 +4,14 @@ This project implements a media scraping application that allows users to scrape
 
 ## If I had more time I would
 
-- Implement the middlewares for auth both on frontend routes and backend routes
-- Figure out a new strategy for the index page to load faster, maybe separate out the search onto its own client component and turn the index page into a server side component
+- TDD
+- Implement the middlewares for auth both on frontend routes and backend routes.
+  - Maybe use NextAuth.
+- Implement MULTIPLE url scraping:
+  - If we took in an array, I'd iterate through the array and send them to the current /api/scrape.
+- Figure out a new strategy for the index page to load faster, maybe separate out the search onto its own client component and turn the index page into a server side component.
+- Implement url based search so that navigation is easier and more intuitive.
+- Create a UI for /api/scrape.
 
 ## Requirements
 
