@@ -2,8 +2,7 @@ import { MediaItem } from "@/app/types";
 import React from "react";
 
 async function fetchMediaById(id: string): Promise<MediaItem | null> {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-  const res = await fetch(`${baseUrl}/api/media/${id}`, {
+  const res = await fetch(`http://localhost:3000/api/media/${id}`, {
     cache: "no-store", // Disable caching for dynamic data
   });
 
