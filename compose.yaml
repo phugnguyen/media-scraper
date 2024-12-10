@@ -1,6 +1,7 @@
 services:
   db:
     image: postgres:14-alpine
+    container_name: media-scraper-db
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
@@ -14,6 +15,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    platform: linux/amd64 # Ensure compatibility with both Intel and Apple Silicon
+    container_name: media-scraper-web
     command: "npm run dev" # Use Next.js development server
     environment:
       DATABASE_URL: "postgresql://admin:password@db:5432/mediascraper?schema=public"
@@ -23,6 +26,7 @@ services:
     volumes:
       - .:/app # Bind mount local files for hot reloading
       - /app/node_modules # Prevent overwriting node_modules
+      - ./prisma:/app/prisma # Include Prisma files in the bind mount for development
     depends_on:
       - db
 
